@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Shehnaz Al Hossain | Premium Dental Care in New Town, Kolkata</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root{
+    --bg:#f7f4ef;
+    --surface:#ffffff;
+    --text:#1f2a37;
+    --muted:#5b6675;
+    --accent:#3b82b8;
+    --accent-dark:#2f6d99;
+    --shadow-soft:0 10px 30px rgba(31,42,55,0.08);
+    --shadow-card:0 8px 20px rgba(31,42,55,0.06);
+    --radius-lg:20px;
+    --radius-md:14px;
+    --radius-sm:10px;
+    --max-width:1100px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+
+    body{
+    font-family:"Inter",sans-serif;
+    color:var(--text);
+    background:linear-gradient(180deg,#fcfbf8 0%,var(--bg) 100%);
+    line-height:1.6;
+    }
+
+    img{max-width:100%;display:block;}
+    a{text-decoration:none;color:inherit;}
+    .container{width:min(92%,var(--max-width));margin:0 auto;}
+
+    section{
+    padding:36px 0;
+    }
+
+    h1,h2,h3{
+    font-family:"Playfair Display",serif;
+    line-height:1.2;
+    color:#1b2531;
+    }
+
+    h1{font-size:clamp(2rem,6vw,3rem);margin-bottom:10px;}
+    h2{font-size:clamp(1.5rem,4vw,2.1rem);margin-bottom:8px;}
+    h3{margin-bottom:6px;}
+
+    p{margin-bottom:12px;}
+
+    .section-subtitle{
+    color:var(--muted);
+    max-width:680px;
+    margin-bottom:16px;
+    }
+
+    .btn-primary{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px 22px;
+    border-radius:999px;
+    font-weight:600;
+    background:var(--accent);
+    color:#fff;
+    transition:all .25s ease;
+    box-shadow:0 10px 24px rgba(59,130,184,0.25);
+    }
+    .btn-primary:hover{
+    background:var(--accent-dark);
+    transform:translateY(-2px);
+    }
+
+    .hero{
+    padding:48px 0 36px;
+    }
+
+    .hero-wrap{
+    display:grid;
+    gap:22px;
+    align-items:center;
+    }
+
+    .hero-card{
+    background:var(--surface);
+    border-radius:var(--radius-lg);
+    padding:22px;
+    box-shadow:var(--shadow-soft);
+    }
+
+    .hero-tag{
+    display:inline-block;
+    background:#eaf3fa;
+    color:var(--accent-dark);
+    padding:6px 12px;
+    border-radius:999px;
+    font-size:.85rem;
+    font-weight:600;
+    margin-bottom:8px;
+    }
+
+    .subtitle{
+    color:var(--muted);
+    margin-bottom:14px;
+    }
+
+    .highlight{color:var(--accent-dark);font-weight:600;}
+
+    .doctor-photo{
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    overflow:hidden;
+    margin:0 auto;
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+    border:5px solid #fff;
+    }
+
+    .doctor-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    }
+
+    .about-grid,
+    .services-grid,
+    .contact-grid{
+    display:grid;
+    gap:14px;
+    }
+
+    .panel,
+    .service-card,
+    .contact-card{
+    background:var(--surface);
+    border-radius:var(--radius-md);
+    padding:18px;
+    box-shadow:var(--shadow-card);
+    }
+
+    .about-list{
+    list-style:none;
+    display:grid;
+    gap:6px;
+    color:var(--muted);
+    }
+
+    .service-icon{
+    font-size:1.3rem;
+    margin-bottom:6px;
+    }
+
+    .service-card p{
+    color:var(--muted);
+    font-size:.95rem;
+    margin-bottom:0;
+    }
+
+    .contact-list{
+    list-style:none;
+    display:grid;
+    gap:8px;
+    color:var(--muted);
+    }
+
+    .map-wrap iframe{
+    width:100%;
+    height:100%;
+    min-height:240px;
+    border:0;
+    border-radius:var(--radius-md);
+    box-shadow:var(--shadow-card);
+    }
+
+    footer{
+    padding:24px 0 36px;
+    color:var(--muted);
+    text-align:center;
+    }
+
+    .mobile-book{
+    position:fixed;
+    left:50%;
+    bottom:16px;
+    transform:translateX(-50%);
+    z-index:999;
+    width:calc(100% - 28px);
+    max-width:420px;
+    }
+
+    /* Tablet */
+    @media(min-width:768px){
+    section{padding:48px 0;}
+
+    .hero-wrap,
+    .about-grid,
+    .contact-grid{
+    grid-template-columns:1.1fr 1fr;
+    }
+
+    .services-grid{
+    grid-template-columns:repeat(2,1fr);
+    }
+
+    .mobile-book{display:none;}
+    }
+
+    /* Desktop */
+    @media(min-width:1024px){
+    .services-grid{
+    grid-template-columns:repeat(3,1fr);
+    }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="container hero-wrap">
+
+    <div class="hero-card">
+      <span class="hero-tag">New Town, Kolkata</span>
+      <h1>Dr. Shehnaz Al Hossain, BDS, MDS</h1>
+      <p class="subtitle">Creating Confident Smiles</p>
+      <p>Premium dental care led by a compassionate specialist with
+        <span class="highlight">8+ years of experience</span>.</p>
+
+      <a class="btn-primary"
+         href="http://localhost:3000/?doctorId=764a3040-a4e5-477d-a299-bb786d8f9919">
+        Book Consultation Now
+      </a>
+    </div>
+
+    <div class="doctor-photo">
+      <img src="doc_pic.png" alt="Dr. Shehnaz Al Hossain">
+    </div>
+
+  </div>
+</header>
+
+<main>
+
+  <section style="background:#f7fbff;">
+    <div class="container about-grid">
+      <div>
+        <h2>About the Doctor</h2>
+        <p class="section-subtitle">
+          Dedicated dental professional focused on precision, comfort, and a premium patient experience.
+        </p>
+      </div>
+
+      <div class="panel">
+        <ul class="about-list">
+          <li><strong>Qualification:</strong> BDS, MDS</li>
+          <li><strong>Experience:</strong> 8+ Years</li>
+          <li><strong>Location:</strong> New Town, Kolkata</li>
+          <li><strong>Speciality:</strong> Preventive & Cosmetic Dentistry</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Services</h2>
+
+      <div class="services-grid">
+        <div class="service-card"><div class="service-icon">✨</div><h3>Teeth Whitening</h3><p>Professional brightening treatments.</p></div>
+        <div class="service-card"><div class="service-icon">🦷</div><h3>Root Canal</h3><p>Gentle endodontic care.</p></div>
+        <div class="service-card"><div class="service-icon">😁</div><h3>Smile Makeover</h3><p>Aesthetic smile enhancement.</p></div>
+        <div class="service-card"><div class="service-icon">📐</div><h3>Braces</h3><p>Orthodontic alignment solutions.</p></div>
+        <div class="service-card"><div class="service-icon">🛡️</div><h3>Checkups</h3><p>Routine exams & cleaning.</p></div>
+        <div class="service-card"><div class="service-icon">🔧</div><h3>Dental Implants</h3><p>Durable natural replacements.</p></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="background:#f7fbff;">
+    <div class="container contact-grid">
+
+      <div class="contact-card">
+        <h2>Contact & Location</h2>
+        <ul class="contact-list">
+          <li><strong>Address:</strong> Care Genix Clinic, New Town, Kolkata</li>
+          <li><strong>Phone:</strong> +91-8420625507</li>
+          <li><strong>Email:</strong> drname@example.com</li>
+          <li><strong>Hours:</strong> Mon-Sat, 10AM - 8PM</li>
+        </ul>
+      </div>
+
+      <div class="map-wrap">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.9237123781104!2d88.4725782!3d22.581956400000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89f5c8b3d5ad9%3A0x80fce57a0ae20851!2sCare%20Genix%20Clinic%20%26%20Diagnostics!5e0!3m2!1sen!2sin!4v1772355909995!5m2!1sen!2sin"
+                allowfullscreen="" loading="lazy"></iframe>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© <span id="year"></span> Dr. Shehnaz Al Hossain. All rights reserved.</p>
+</footer>
+
+<a class="btn-primary mobile-book"
+   href="http://localhost:3000/?doctorId=764a3040-a4e5-477d-a299-bb786d8f9919">
+  Book Now
+</a>
+
+<script>
+  document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+
+</body>
+</html>
