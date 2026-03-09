@@ -11,14 +11,15 @@
 
   <style>
     :root{
-    --bg:#f7f4ef;
+    --bg:#f2f9f6;
     --surface:#ffffff;
-    --text:#1f2a37;
-    --muted:#5b6675;
-    --accent:#3b82b8;
-    --accent-dark:#2f6d99;
-    --shadow-soft:0 10px 30px rgba(31,42,55,0.08);
-    --shadow-card:0 8px 20px rgba(31,42,55,0.06);
+    --text:#1b2a2e;
+    --muted:#50656b;
+    --accent:#1f8a7a;
+    --accent-dark:#166d61;
+    --accent-soft:#e5f5f2;
+    --shadow-soft:0 16px 34px rgba(12,47,40,0.12);
+    --shadow-card:0 10px 22px rgba(12,47,40,0.09);
     --radius-lg:20px;
     --radius-md:14px;
     --radius-sm:10px;
@@ -31,7 +32,9 @@
     body{
     font-family:"Inter",sans-serif;
     color:var(--text);
-    background:linear-gradient(180deg,#fcfbf8 0%,var(--bg) 100%);
+    background:
+    radial-gradient(circle at top right, #d8f0e9 0%, rgba(216,240,233,0) 42%),
+    linear-gradient(180deg,#f9fefc 0%,var(--bg) 100%);
     line-height:1.6;
     }
 
@@ -71,7 +74,7 @@
     background:var(--accent);
     color:#fff;
     transition:all .25s ease;
-    box-shadow:0 10px 24px rgba(59,130,184,0.25);
+    box-shadow:0 10px 24px rgba(31,138,122,0.28);
     }
     .btn-primary:hover{
     background:var(--accent-dark);
@@ -91,13 +94,14 @@
     .hero-card{
     background:var(--surface);
     border-radius:var(--radius-lg);
-    padding:22px;
+    padding:24px;
     box-shadow:var(--shadow-soft);
+    border:1px solid #d8ece7;
     }
 
     .hero-tag{
     display:inline-block;
-    background:#eaf3fa;
+    background:var(--accent-soft);
     color:var(--accent-dark);
     padding:6px 12px;
     border-radius:999px;
@@ -112,6 +116,14 @@
     }
 
     .highlight{color:var(--accent-dark);font-weight:600;}
+    .trust-points{
+    list-style:none;
+    display:grid;
+    gap:6px;
+    margin:2px 0 16px;
+    color:#355057;
+    font-size:.95rem;
+    }
 
     .doctor-photo{
     width:200px;
@@ -144,6 +156,13 @@
     padding:18px;
     box-shadow:var(--shadow-card);
     }
+    .service-card{
+    transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .service-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 14px 30px rgba(12,47,40,0.14);
+    }
 
     .about-list{
     list-style:none;
@@ -163,17 +182,44 @@
     margin-bottom:0;
     }
 
+    .contact-head{
+    margin-bottom:14px;
+    }
     .contact-list{
     list-style:none;
     display:grid;
-    gap:8px;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:10px;
     color:var(--muted);
+    margin-bottom:14px;
     }
-
+    .contact-list li{
+    background:var(--surface);
+    border-radius:var(--radius-sm);
+    padding:10px 12px;
+    box-shadow:var(--shadow-card);
+    }
+    .location-cards{
+    display:grid;
+    gap:14px;
+    }
+    .location-card{
+    background:var(--surface);
+    border-radius:var(--radius-md);
+    padding:14px;
+    box-shadow:var(--shadow-card);
+    border:1px solid #d8ece7;
+    }
+    .location-card h3{
+    margin-bottom:4px;
+    }
+    .location-meta{
+    color:var(--muted);
+    margin-bottom:10px;
+    }
     .map-wrap iframe{
     width:100%;
-    height:100%;
-    min-height:240px;
+    min-height:220px;
     border:0;
     border-radius:var(--radius-md);
     box-shadow:var(--shadow-card);
@@ -208,6 +254,9 @@
     .services-grid{
     grid-template-columns:repeat(2,1fr);
     }
+    .location-cards{
+    grid-template-columns:repeat(2,1fr);
+    }
 
     .mobile-book{display:none;}
     }
@@ -231,15 +280,20 @@
         Dr. Shehnaz Hossain
       </h1>
       <span class="degree">BDS, Diploma in Primary Care Dentistry</span>
-      <p class="subtitle">Creating Confident Smiles</p>
+      <p class="subtitle">Gentle, personalized dental care for every age.</p>
       <p>
-        Premium dental care led by a compassionate specialist with
+        Feel calm and cared for from your first visit with a compassionate specialist and
         <span class="highlight">8+ years of experience</span>.
       </p>
+      <ul class="trust-points">
+        <li>Comfort-first treatment approach</li>
+        <li>Clear guidance before every procedure</li>
+        <li>Modern care in a clean, friendly clinic</li>
+      </ul>
 
       <a class="btn-primary"
          href="https://cliniccare365.vercel.app/patient/?id=909a1c24-46ce-48b3-a78c-3adca15ca879">
-        Book Consultation Now
+        Book a Free Consulation Now!
       </a>
     </div>
 
@@ -289,22 +343,34 @@
   </section>
 
   <section style="background:#f7fbff;">
-    <div class="container contact-grid">
-
-      <div class="contact-card">
-        <h2>Contact & Location</h2>
-        <ul class="contact-list">
-          <li><strong>Address:</strong> Care Genix Clinic, New Town, Kolkata</li>
-          <li><strong>Phone:</strong> +91-8420625507</li>
-          <li><strong>Hours:</strong> Mon-Sat, 10AM - 8PM</li>
-        </ul>
+    <div class="container">
+      <div class="contact-head">
+        <h2>Contact & Locations</h2>
       </div>
 
-      <div class="map-wrap">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.9237123781104!2d88.4725782!3d22.581956400000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89f5c8b3d5ad9%3A0x80fce57a0ae20851!2sCare%20Genix%20Clinic%20%26%20Diagnostics!5e0!3m2!1sen!2sin!4v1772355909995!5m2!1sen!2sin"
-                allowfullscreen="" loading="lazy"></iframe>
-      </div>
+      <ul class="contact-list">
+        <li><strong>Phone:</strong> <a href="tel:+918420625507">+91-8420625507</a></li>
+        <li><strong>Hours:</strong> Mon-Sat, 10AM - 8PM</li>
+      </ul>
 
+      <div class="location-cards">
+        <article class="location-card">
+          <h3>Care Genix Clinic, New Town</h3>
+          <p class="location-meta">New Town, Kolkata</p>
+          <div class="map-wrap">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.9237123781104!2d88.4725782!3d22.581956400000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89f5c8b3d5ad9%3A0x80fce57a0ae20851!2sCare%20Genix%20Clinic%20%26%20Diagnostics!5e0!3m2!1sen!2sin!4v1772355909995!5m2!1sen!2sin"
+                    allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </article>
+        <article class="location-card">
+          <h3>Dr Dey's Oral & Dental Clinic</h3>
+          <p class="location-meta">Kolkata</p>
+          <div class="map-wrap">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.0092120050244!2d88.50162581046622!3d22.616131179375063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f8a1d3ee62323f%3A0xf0f4d3a2c58d6758!2sDr%20Dey%E2%80%99s%20Oral%20%26%20Dental%20Clinic!5e0!3m2!1sen!2sin!4v1773075737112!5m2!1sen!2sin"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -316,7 +382,7 @@
 
 <a class="btn-primary mobile-book"
    href="https://cliniccare365.vercel.app/patient/?id=909a1c24-46ce-48b3-a78c-3adca15ca879">
-  Book Now
+  Book a Free Consulation Now!
 </a>
 
 <script>
